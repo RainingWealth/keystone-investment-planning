@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your Free Roadmap — Keystone Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="mark">K</span>Keystone Advisory</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="process.html">Process</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Get your roadmap <span class="ar">→</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<section class="hero" style="padding:64px 0 40px;">
+  <div class="wrap">
+    <span class="eyebrow">Let's talk</span>
+    <h1 style="max-width:680px;">Get your free Financial Roadmap.</h1>
+    <p class="lede" style="margin-top:16px;">Two quick questions and we'll be in touch — no cost, no pressure, no obligation.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <form class="form" id="leadForm">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Tan" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">WhatsApp number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+65 9123 4567" autocomplete="tel" required>
+      </div>
+
+      <div class="field">
+        <label>What would help most right now?</label>
+        <div class="choice-grid" id="goalGrid">
+          <button type="button" class="choice" data-goal="Grow my money without risking my lifestyle">Grow my money without risking my lifestyle</button>
+          <button type="button" class="choice" data-goal="Review my current investments">Review my current investments</button>
+          <button type="button" class="choice" data-goal="Not sure how to start — help me">Not sure how to start — help me</button>
+          <button type="button" class="choice" data-goal="Plan for a goal (retirement / child's education)">Plan for a goal (retirement / child's education)</button>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:28px;">
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Get my free roadmap <span class="ar">→</span></button>
+      </div>
+      <p class="form-note">By submitting you agree to be contacted by WhatsApp about your roadmap. We'll never spam or share your details.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <div class="f-brand">Keystone Advisory</div>
+        <div class="f-tag">Grow your money without changing how you live.</div>
+      </div>
+      <div class="footer-links">
+        <a href="philosophy.html">Philosophy</a>
+        <a href="process.html">Process</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <p class="disc">This site is for general information and education only and does not constitute financial advice or a recommendation to buy or sell any investment. Investment involves risk, including possible loss of principal. Please consult a licensed financial adviser for advice specific to your situation.</p>
+  </div>
+</footer>
+
+<script>
+const t=document.getElementById('navToggle'),n=document.getElementById('navLinks');
+t.addEventListener('click',()=>n.classList.toggle('open'));
+
+let goal = '';
+const grid = document.getElementById('goalGrid');
+grid.querySelectorAll('.choice').forEach(b=>{
+  b.addEventListener('click',()=>{
+    grid.querySelectorAll('.choice').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');
+    goal = b.dataset.goal;
+  });
+});
+
+// Lead capture — wire this to Airtable/n8n in production.
+document.getElementById('leadForm').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if(!goal){ alert('Please pick one option above.'); return; }
+  // Compose a WhatsApp message (manual send by the lead — no automation).
+  const msg = `Hi, I'm ${name}. I'd like a free Financial Roadmap.\n\nMy focus: ${goal}\n\nContact: ${phone}`;
+  const wa = `https://wa.me/6583823194?text=${encodeURIComponent(msg)}`;
+  window.open(wa, '_blank');
+});
+</script>
+</body>
+</html>

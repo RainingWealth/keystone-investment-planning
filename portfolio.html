@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio — Keystone Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="mark">K</span>Keystone Advisory</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="process.html">Process</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="contact.html">Get your roadmap <span class="ar">→</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<section class="hero" style="padding:72px 0 40px;">
+  <div class="wrap">
+    <span class="eyebrow">Transparency first</span>
+    <h1 style="max-width:720px;">We show our own numbers.</h1>
+    <p class="lede" style="margin-top:16px;">Here's a sample portfolio and the reasoning behind how it's built. We hold ourselves to the same standard we hold for you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:820px;">
+    <div class="doc">
+      <div class="doc-head">
+        <div class="t">Sample Portfolio</div>
+        <div class="s">Balanced growth — illustrative allocation (not a recommendation)</div>
+      </div>
+
+      <div class="alloc-bar">
+        <span style="width:42%; background:#14214A;" title="Global equities 42%"></span>
+        <span style="width:28%; background:#C9A84C;" title="Bonds & fixed income 28%"></span>
+        <span style="width:12%; background:#5B6070;" title="Real assets 12%"></span>
+        <span style="width:10%; background:#A9882E;" title="Alternatives 10%"></span>
+        <span style="width:8%; background:#E9DCB2;" title="Cash 8%"></span>
+      </div>
+
+      <div class="alloc-legend">
+        <div class="alloc-item"><span class="dot" style="background:#14214A;"></span> Global equities <span class="pct">42%</span></div>
+        <div class="alloc-item"><span class="dot" style="background:#C9A84C;"></span> Bonds & fixed income <span class="pct">28%</span></div>
+        <div class="alloc-item"><span class="dot" style="background:#5B6070;"></span> Real assets <span class="pct">12%</span></div>
+        <div class="alloc-item"><span class="dot" style="background:#A9882E;"></span> Alternatives <span class="pct">10%</span></div>
+        <div class="alloc-item"><span class="dot" style="background:#E9DCB2;"></span> Cash buffer <span class="pct">8%</span></div>
+      </div>
+
+      <div class="reason">
+        <h4>How this portfolio is built</h4>
+        <ul>
+          <li><strong>Growth engine</strong> — Global equities do the compounding; diversified across markets so no single region carries the load.</li>
+          <li><strong>Shock absorber</strong> — Bonds and fixed income smooth out the ride when markets dip, so the portfolio doesn't force a panic decision.</li>
+          <li><strong>Inflation hedge</strong> — Real assets help the portfolio keep pace when prices rise.</li>
+          <li><strong>Dry powder</strong> — A small cash buffer means you never have to sell at the wrong time.</li>
+        </ul>
+      </div>
+
+      <p class="watermark">SAMPLE — for illustration only. A personal portfolio is built to your own goals, horizon and risk.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Built for you</span>
+      <h2>Your portfolio will look different — and that's the point.</h2>
+      <p>This sample shows the logic. Yours is built from your goals, your horizon and how much risk you're comfortable taking. No two portfolios are the same.</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html">Start your plan <span class="ar">→</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <div class="f-brand">Keystone Advisory</div>
+        <div class="f-tag">Grow your money without changing how you live.</div>
+      </div>
+      <div class="footer-links">
+        <a href="philosophy.html">Philosophy</a>
+        <a href="process.html">Process</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <p class="disc">This site is for general information and education only and does not constitute financial advice or a recommendation to buy or sell any investment. Investment involves risk, including possible loss of principal. The sample portfolio is illustrative and not a recommendation. Please consult a licensed financial adviser for advice specific to your situation.</p>
+  </div>
+</footer>
+
+<script>
+const t=document.getElementById('navToggle'),n=document.getElementById('navLinks');
+t.addEventListener('click',()=>n.classList.toggle('open'));
+</script>
+</body>
+</html>
